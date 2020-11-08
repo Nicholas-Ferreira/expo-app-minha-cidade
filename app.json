@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "peruibe-expo",
-    "slug": "peruibe-expo",
+    "name": "minha-cidade",
+    "slug": "minha-cidade",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
