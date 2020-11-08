@@ -1,7 +1,7 @@
-import { YellowBox } from 'react-native';
+import { LogBox } from 'react-native';
 
 import App from './src';
 
-YellowBox.ignoreWarnings(['Remote debugger is in a background tab']);
+LogBox.ignoreAllLogs(true)
 
 export default App;

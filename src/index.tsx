@@ -1,13 +1,20 @@
 import * as React from 'react';
 import * as eva from '@eva-design/eva';
 import { AppLoading } from 'expo';
+import { StatusBar } from 'expo-status-bar';
 import { Asset } from 'expo-asset'
-import { Image } from 'react-native';
-import { ApplicationProvider } from '@ui-kitten/components';
-import FlashMessage, { showMessage } from 'react-native-flash-message';
-import Routers from './routers'
+import Constants from 'expo-constants';
+import { Image, View, StyleSheet } from 'react-native';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import FlashMessage from 'react-native-flash-message';
+import { Navigation } from './routers'
+import { Medias, Icons } from './Constants/assets';
 
-const assetImages: Array<string> = [];
+const assetImages: Array<string> = [
+  Medias.background,
+  ...Object.values(Icons)
+];
 
 export default () => {
   const [loading, setLoading] = React.useState(true)
@@ -45,10 +52,19 @@ export default () => {
   }
 
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <Routers />
-
+    <View style={style.container}>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <Navigation />
+      </ApplicationProvider>
       <FlashMessage position="top" duration={2000} />
-    </ApplicationProvider>
+    </View>
   )
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    //paddingTop: Constants.statusBarHeight
+  }
+})
