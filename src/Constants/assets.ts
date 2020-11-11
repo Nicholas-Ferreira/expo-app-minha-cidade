@@ -3,7 +3,7 @@ export const Medias = {
 }
 
 export const Imagens = {
- 
+  
 }
 
 export const Icons = {

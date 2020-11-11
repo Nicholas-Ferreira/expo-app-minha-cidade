@@ -50,7 +50,7 @@ export const LoginScreen = ({ navigation }: ScreenProps) => {
           />
 
           <Button style={styles.button} onPress={() => navigation.navigate('Dashboard')}>Entrar</Button>
-          <Text style={styles.text} onPress={() => navigation.navigate('Cadastro')}> Não possui conta? cadastre-se! </Text>
+          <Text style={[styles.text, { padding: 10 }]} onPress={() => navigation.navigate('Cadastro')}> Não possui conta? cadastre-se! </Text>
         </View>
       </View>
     </SafeAreaView>
